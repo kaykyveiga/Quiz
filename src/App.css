@@ -1,0 +1,51 @@
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    max-width: 400px;
+    margin: 2rem auto;
+    border: .2rem solid #fff;
+}
+
+.icons {
+    margin-top: 2rem;
+
+}
+
+.question-icon {
+    font-size: 3rem;
+    transform: rotate(20deg);
+    margin-right: -.7rem;
+}
+
+.exclamation-icon {
+    font-size: 3.5rem;
+    fill: #ff4000;
+    transform: rotate(-10deg);
+}
+
+
+
+#title {
+    font-size: 4rem;
+    color: #ff4000;
+    font-weight: 900;
+    -webkit-text-stroke: .4px #fff;
+}
+
+#subtitle {
+    font-weight: bold;
+    font-size: 1.9rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    color: #65E0F1;
+    -webkit-text-stroke: .4px #fff;
+}
+
+
+@media screen and (max-width: 700px) {
+    .App {
+        margin: 1rem;
+    }
+}

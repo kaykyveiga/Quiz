@@ -1,12 +1,11 @@
-import Quiz from "../images/Quiz.png"
 
+import "./Start.css"
 const Start = () => {
     return (
-        <div>
-            <h2>Quiz sobre conhecimentos diversos</h2>
-            <h3>Seja bem-vindo</h3>
-            <img src={Quiz} alt="question image" />
-            <p>Clique no botão abaixo para começar. Divirta-se</p>
+        <div className="start">
+            <h2>Seja bem-vindo</h2>
+            <p>Clique no botão abaixo para começar.</p>
+            <p> Divirta-se!</p>
             <button>Começar</button>
         </div>
     )
