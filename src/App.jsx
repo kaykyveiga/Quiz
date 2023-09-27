@@ -1,8 +1,19 @@
 import { FaExclamationCircle, FaQuestionCircle } from 'react-icons/fa';
-import './App.css'
+import { useContext, useEffect } from "react";
+import { QuizContext } from "./context/Quiz";
+
 import Start from './components/Start'
+import Questions from './components/Questions';
+import GameOver from './components/GameOver';
+
+import './App.css'
 
 function App() {
+  const [quizStep, dispatch] = useContext(QuizContext);
+  
+  useEffect(() => {
+    dispatch({ type: "REORDER_QUESTIONS" });
+  }, [])
 
   return (
     <div className="App">
@@ -12,7 +23,9 @@ function App() {
       </span>
       <h1 id='title'>Quiz</h1>
       <p id='subtitle'>Time</p>
-      <Start />
+      {quizStep.gameStep === "initial" && <Start />}
+      {quizStep.gameStep === "playing" && <Questions />}
+      {quizStep.gameStep === "end" && <GameOver />}
     </div>
   )
 }
