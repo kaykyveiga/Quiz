@@ -7,6 +7,7 @@ const initialStep = {
     gameStep: STEPS[0],
     questions,
     currentQuestion: 0,
+    score: 0,
 }
 
 const quizReducer = (step, action) => {
@@ -33,6 +34,8 @@ const quizReducer = (step, action) => {
             return {
                 ...step, currentQuestion: nextQuestion, gameStep: end ? STEPS[2] : step.gameStep,
             }
+        case "RESTART":
+            return initialStep;
 
         default: return step;
     }
