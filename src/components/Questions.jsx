@@ -2,6 +2,7 @@ import { QuizContext } from "../context/Quiz";
 import { useContext } from "react";
 
 import "./Questions.css"
+import Options from "./Options";
 
 const Questions = () => {
   const [quizStep, dispatch] = useContext(QuizContext);
@@ -10,15 +11,22 @@ const Questions = () => {
   const handleNextQuestion = () => {
     dispatch({ type: "NEXT_QUESTION" });
   }
-
+  const onSelectedOption = (options) => {
+    dispatch({
+      type : "CHECK_QUESTION",
+      payload: {answer:currentQuestion.answer, options}
+     });
+  }
   return (
     <div id="questions">
       <p>Perguntas {quizStep.currentQuestion + 1} de {quizStep.questions.length} </p>
-      <h2>{currentQuestion.question}</h2>
+      <h2 id="questions-title">{currentQuestion.question}</h2>
       <div id="options">
-        <p>Opções</p>
+        {currentQuestion.options.map((options) => (
+          <Options option={options} key={options} answer={currentQuestion.answer} selectedOption={() => onSelectedOption(options)} />
+        ))}
       </div>
-      <button onClick={handleNextQuestion}>Continuar</button>
+     {quizStep.answerSelected && ( <button onClick={handleNextQuestion}>Continuar</button>)} 
     </div>
   )
 }

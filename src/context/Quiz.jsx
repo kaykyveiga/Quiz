@@ -8,6 +8,7 @@ const initialStep = {
     questions,
     currentQuestion: 0,
     score: 0,
+    answerSelected: false,
 }
 
 const quizReducer = (step, action) => {
@@ -32,10 +33,24 @@ const quizReducer = (step, action) => {
                 end = true;
             }
             return {
-                ...step, currentQuestion: nextQuestion, gameStep: end ? STEPS[2] : step.gameStep,
+                ...step, currentQuestion: nextQuestion, gameStep: end ? STEPS[2] : step.gameStep,answerSelected : false
             }
         case "RESTART":
             return initialStep;
+
+        case "CHECK_QUESTION":
+            if (step.answerSelected) return step;
+
+            const answer = action.payload.answer;
+            const option = action.payload.options;
+            let correctAnswer = 0;
+
+            if (answer === option) correctAnswer = 1;
+            return {
+                ...step,
+                score: step.score + correctAnswer,
+                answerSelected: option,
+            }
 
         default: return step;
     }
