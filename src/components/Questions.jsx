@@ -26,6 +26,12 @@ const Questions = () => {
           <Options option={options} key={options} answer={currentQuestion.answer} selectedOption={() => onSelectedOption(options)} />
         ))}
       </div>
+      {!quizStep.answerSelected && !quizStep.help &&(
+        <button id="tip" onClick={() => dispatch({type : "SHOW_HELP"})}>Dica</button>
+      )}
+      {!quizStep.answerSelected && quizStep.help === "help" &&(
+        <p id="tip-text">Dica : {currentQuestion.tip}</p>
+      )}
      {quizStep.answerSelected && ( <button onClick={handleNextQuestion}>Continuar</button>)} 
     </div>
   )

@@ -9,6 +9,7 @@ const initialStep = {
     currentQuestion: 0,
     score: 0,
     answerSelected: false,
+    help : false,
 }
 
 const quizReducer = (step, action) => {
@@ -43,6 +44,11 @@ const quizReducer = (step, action) => {
                   ...step,
                   questions: reorderedQuestions,
                 };
+        case  "SHOW_HELP" : 
+        return {
+            ...step, help : "help"
+        }
+
        
         case "NEXT_QUESTION":
             const nextQuestion = step.currentQuestion + 1;
@@ -68,6 +74,7 @@ const quizReducer = (step, action) => {
                 ...step,
                 score: step.score + correctAnswer,
                 answerSelected: option,
+                help : false
             }
 
         default: return step;
