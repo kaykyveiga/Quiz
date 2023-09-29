@@ -1,0 +1,24 @@
+:root {
+    --tip-color: #0bfc03;
+    --delete-question: #ee3030;
+}
+
+#questions-title {
+    margin: .5rem 1rem;
+}
+
+#tip-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--tip-color);
+    margin: 0 1rem;
+}
+
+#tip {
+    background: var(--tip-color);
+}
+
+#delete {
+    background: var(--delete-question);
+    padding: .3rem 1.5rem;
+}
