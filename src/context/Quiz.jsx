@@ -9,7 +9,8 @@ const initialStep = {
     currentQuestion: 0,
     score: 0,
     answerSelected: false,
-    help : false,
+    help: false,
+    optionToHide: null,
 }
 
 const quizReducer = (step, action) => {
@@ -20,7 +21,8 @@ const quizReducer = (step, action) => {
                 ...step,
                 gameStep: STEPS[1],
             };
-        case "START_GAME":
+
+        case "START_GAME": {
             let startQuestions = null;
 
             step.questions.forEach((question) => {
@@ -33,24 +35,47 @@ const quizReducer = (step, action) => {
                 questions: startQuestions,
                 gameStep: STEPS[2]
             }
-            case "REORDER_QUESTIONS":
-            
-                    const reorderedQuestions = step.questions.sort(() => {
-                        return Math.random() - 0.5;
-                      });
-               
-          
-                return {
-                  ...step,
-                  questions: reorderedQuestions,
-                };
-        case  "SHOW_HELP" : 
-        return {
-            ...step, help : "help"
         }
 
-       
-        case "NEXT_QUESTION":
+        case "REORDER_QUESTIONS": {
+            const reorderedQuestions = step.questions.sort(() => {
+                return Math.random() - 0.5;
+            });
+
+
+            return {
+                ...step,
+                questions: reorderedQuestions,
+            };
+        }
+
+        case "SHOW_HELP": {
+            return {
+                ...step, help: "help"
+            }
+        }
+
+        case "REMOVE_OPTION": {
+            const WithoutOption = step.questions[step.currentQuestion];
+
+            let repeat = true;
+            let optionToHide;
+
+            WithoutOption.options.forEach((option) => {
+                if (option !== WithoutOption.answer && repeat) {
+                    optionToHide = option;
+                    repeat = false;
+                }
+            });
+
+            return {
+                ...step,
+                optionToHide,
+                help: true,
+            };
+        }
+
+        case "NEXT_QUESTION": {
             const nextQuestion = step.currentQuestion + 1;
             let end = false;
             if (!questions[nextQuestion]) {
@@ -59,10 +84,11 @@ const quizReducer = (step, action) => {
             return {
                 ...step, currentQuestion: nextQuestion, gameStep: end ? STEPS[3] : step.gameStep, answerSelected: false
             }
-        case "RESTART":
-            return initialStep;
+        }
 
-        case "CHECK_QUESTION":
+        case "RESTART": return initialStep;
+
+        case "CHECK_QUESTION": {
             if (step.answerSelected) return step;
 
             const answer = action.payload.answer;
@@ -74,8 +100,9 @@ const quizReducer = (step, action) => {
                 ...step,
                 score: step.score + correctAnswer,
                 answerSelected: option,
-                help : false
+                help: false
             }
+        }
 
         default: return step;
     }
