@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
-import questions from "../data/startQuestion";
+import questions from "../data/allQuestion";
 
-const STEPS = ['initial', 'playing', 'end'];
+const STEPS = ['initial', 'category', 'playing', 'end'];
 
 const initialStep = {
     gameStep: STEPS[0],
@@ -19,13 +19,31 @@ const quizReducer = (step, action) => {
                 ...step,
                 gameStep: STEPS[1],
             };
-        case "REORDER_QUESTIONS":
-            const reoderedQuestions = questions.sort(() => {
-                return Math.random() - 0.5;
+        case "START_GAME":
+            let startQuestions = null;
+
+            step.questions.forEach((question) => {
+                if (question.category === action.payload) {
+                    startQuestions = question.questions
+                }
             })
             return {
-                ...step, questions: reoderedQuestions
+                ...step,
+                questions: startQuestions,
+                gameStep: STEPS[2]
             }
+            case "REORDER_QUESTIONS":
+            
+                    const reorderedQuestions = step.questions.sort(() => {
+                        return Math.random() - 0.5;
+                      });
+               
+          
+                return {
+                  ...step,
+                  questions: reorderedQuestions,
+                };
+       
         case "NEXT_QUESTION":
             const nextQuestion = step.currentQuestion + 1;
             let end = false;
@@ -33,7 +51,7 @@ const quizReducer = (step, action) => {
                 end = true;
             }
             return {
-                ...step, currentQuestion: nextQuestion, gameStep: end ? STEPS[2] : step.gameStep,answerSelected : false
+                ...step, currentQuestion: nextQuestion, gameStep: end ? STEPS[3] : step.gameStep, answerSelected: false
             }
         case "RESTART":
             return initialStep;

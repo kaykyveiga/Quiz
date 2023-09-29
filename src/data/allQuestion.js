@@ -1,10 +1,10 @@
 const data = [
     {
-        category: "naturalSciences",
+        category: "Ciências Naturais",
         questions: [
             {
                 question: "Qual é o processo pelo qual as plantas convertem a luz solar em energia química?",
-                options: ["Respiração celular", " Fotossíntese", "Transpiração", " Decomposição"],
+                options: ["Respiração celular", "Fotossíntese", "Transpiração", " Decomposição"],
                 answer: "Fotossíntese",
                 tip: " Este processo envolve clorofila e é essencial para a produção de oxigênio.",
             },
@@ -22,14 +22,14 @@ const data = [
             },
             {
                 question: "Qual princípio fundamental da física afirma que a energia em um sistema isolado permanece constante ao longo do tempo?",
-                options: ["Lei da Inércia", " Lei da Conservação da Energia", "Lei da Gravidade Universal", "Lei da Ação e Reaç"],
+                options: ["Lei da Inércia", "Lei da Conservação da Energia", "Lei da Gravidade Universal", "Lei da Ação e Reaç"],
                 answer: "Lei da Conservação da Energia",
                 tip: "Essa lei estabelece que a energia não pode ser criada nem destruída, apenas transformada de uma forma para outra.",
             },
             {
                 question: "Quem foi o cientista que formulou a teoria da relatividade?",
-                options: ["Isaac Newton", "Galileu Galilei", "Marie Curie", " Albert Einstein"],
-                answer: " Albert Einstein",
+                options: ["Isaac Newton", "Galileu Galilei", "Marie Curie", "Albert Einstein"],
+                answer: "Albert Einstein",
                 tip: " Ele é famoso por suas equações E=mc^2.",
             },
             {
@@ -53,7 +53,7 @@ const data = [
         ],
     },
     {
-        category: "worldHistory",
+        category: "História Mundial",
         questions: [
             {
                 question: "Qual foi o evento que marcou o início da Primeira Guerra Mundial em 1914?",
@@ -106,7 +106,7 @@ const data = [
         ],
     },
     {
-        category: "geography",
+        category: "Geografia",
         questions: [
             {
                 question: "Qual é o maior rio do mundo em volume de água?",
@@ -159,7 +159,7 @@ const data = [
         ],
     },
     {
-        category: "moviesSeries",
+        category: "Filmes e Séries",
         questions: [
             {
                 question: "Qual é o nome da série de televisão ambientada em Westeros e baseada nos livros de George R. R. Martin?",
@@ -212,7 +212,7 @@ const data = [
         ],
     },
     {
-        category: "sports",
+        category: "Esportes",
         questions: [
             {
                 question: "Em qual esporte se utiliza um taco para rebater uma bola arremessada?",
@@ -265,7 +265,7 @@ const data = [
         ],
     },
     {
-        category: "literature",
+        category: "Literatura",
         questions: [
             {
                 question: "Pergunta: Qual autor é conhecido por escrever a série de livros 'Harry Potter'?",
@@ -311,14 +311,14 @@ const data = [
             },
             {
                 question: "Qual foi um dos principais valores promovidos pelo Humanismo, enfatizando a importância do ser humano, sua dignidade e potencial?",
-                options: ["Antropocentrismo", "Fé religiosa", "Valorização da natureza", "Fé religiosa"],
+                options: ["Antropocentrismo", "Fé religiosa", "Valorização da natureza", "Liberdade Indivual"],
                 answer: "Antropocentrismo",
                 tip: "Este termo significa 'centrado no homem' e é central para a filosofia humanista.",
             },
         ],
     },
     {
-        category: "technologyInovation",
+        category: "Tecnologia",
         questions: [
             {
                 question: "Em telecomunicações ele é o mais novo e atual padrão global para comunicações sem fio. As empresas de telefonia celular começaram o introduzir em todo o mundo no final de 2018, mas só agora, em 2022, ele está começando a ser implantado nas grandes capitais brasileiras. Ele é o:",
@@ -329,7 +329,7 @@ const data = [
             {
                 question: "Algoritmo é uma palavra muito citada na mídia, esse recurso é bastante utilizado no mundo digital, nas redes sociais, plataformas e sites de pesquisa. Sobre o algoritmo é CORRETO afirmar que:",
                 options: ["É um conjunto de instruções sequenciais que realiza uma tarefa específica.", "É exclusivamente utilizado em matemática e não tem aplicação em outros campos.", "Não tem relevância ou aplicação prática no mundo digital.", "Refere-se apenas a fórmulas matemáticas complexas sem utilidade prática."],
-                answer: "É um conjunto de instruções sequenciais que realiza uma tarefa específica",
+                answer: "É um conjunto de instruções sequenciais que realiza uma tarefa específica.",
                 tip: "Um algoritmo é um conjunto de passos sequenciais que descrevem um processo ou operação a ser executada",
             },
             {
@@ -371,7 +371,7 @@ const data = [
         ],
     },
     {
-        category: "generalCuriosities",
+        category: "Curiosidades Gerais",
         questions: [
             {
                 question: "Qual é a árvore mais alta do mundo?",
