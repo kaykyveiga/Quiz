@@ -1,11 +1,10 @@
-import { QuizContext } from "../../context/Quiz";
-import { useContext } from "react";
+import useQuizContext from "../../hook/useQuizContext";
 
 import Options from "../Options/Options";
 import "./Questions.css";
 
 const Questions = () => {
-  const [quizStep, dispatch] = useContext(QuizContext);
+  const [quizStep, dispatch] = useQuizContext();
   const currentQuestion = quizStep.questions[quizStep.currentQuestion];
 
   const handleNextQuestion = () => {

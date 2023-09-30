@@ -1,10 +1,9 @@
-import { QuizContext } from "../../context/Quiz";
-import { useContext } from "react";
+import useQuizContext from "../../hook/useQuizContext";
 
 import "./Start.css";
 
 const Start = () => {
-    const [quizStep, dispatch] = useContext(QuizContext);
+    const [quizStep, dispatch] = useQuizContext();
 
     const handleChangeStep = () => {
         dispatch({ type: "CHANGE_STEP" })

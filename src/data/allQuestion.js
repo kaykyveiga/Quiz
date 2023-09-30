@@ -22,7 +22,7 @@ const data = [
             },
             {
                 question: "Qual princípio fundamental da física afirma que a energia em um sistema isolado permanece constante ao longo do tempo?",
-                options: ["Lei da Inércia", "Lei da Conservação da Energia", "Lei da Gravidade Universal", "Lei da Ação e Reaç"],
+                options: ["Lei da Inércia", "Lei da Conservação da Energia", "Lei da Gravidade Universal", "Lei da Ação e Reação"],
                 answer: "Lei da Conservação da Energia",
                 tip: "Essa lei estabelece que a energia não pode ser criada nem destruída, apenas transformada de uma forma para outra.",
             },

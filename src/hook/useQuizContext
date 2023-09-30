@@ -1,0 +1,9 @@
+import { useContext } from "react";
+import { QuizContext } from "../context/Quiz";
+
+const useQuizContext = () => {
+  const [quizStep, dispatch] = useContext(QuizContext);
+  return [quizStep, dispatch];
+};
+
+export default useQuizContext;

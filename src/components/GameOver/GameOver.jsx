@@ -1,8 +1,7 @@
-import { QuizContext } from "../../context/Quiz";
-import { useContext } from "react";
+import useQuizContext from "../../hook/useQuizContext";
 
 const GameOver = () => {
-    const [quizStep, dispatch] = useContext(QuizContext);
+    const [quizStep, dispatch] = useQuizContext();
     const handleRestart = () => {
         dispatch({ type: "RESTART" })
     }
