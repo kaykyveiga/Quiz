@@ -40,3 +40,9 @@
     color: #65E0F1;
     -webkit-text-stroke: .4px #fff;
 }
+
+@media screen and (max-width: 440px){
+    .App {
+        margin: 1rem;
+    }
+}
