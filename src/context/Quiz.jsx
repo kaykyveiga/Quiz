@@ -93,13 +93,18 @@ const quizReducer = (step, action) => {
 
             const answer = action.payload.answer;
             const option = action.payload.options;
+
+            const totalQuestions = 8;
             let correctAnswer = 0;
 
             if (answer === option) correctAnswer = 1;
+            const result = step.score + (correctAnswer / totalQuestions) * 100;
+
             return {
                 ...step,
-                score: step.score + correctAnswer,
+                score: result,
                 answerSelected: option,
+                correctAnswer : correctAnswer,
                 help: false
             }
         }
