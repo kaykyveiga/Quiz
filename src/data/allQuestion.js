@@ -99,7 +99,7 @@ const data = [
             },
             {
                 question: "Quem é creditado como o explorador que descobriu o Brasil em 1500?",
-                options: ["Fernão de Magalhães", "Vasco da Gama", "Pedro Álvares Cabral", "Vasco da Gama"],
+                options: ["Fernão de Magalhães", "Vasco da Gama", "Pedro Álvares Cabral", "Napoleão"],
                 answer: "Pedro Álvares Cabral",
                 tip: "Ele é creditado como o explorador que descobriu o Brasil em 1500.",
             },

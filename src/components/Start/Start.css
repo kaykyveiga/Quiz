@@ -1,4 +1,7 @@
-
 .start {
     font-weight: bold;
+}
+
+.start > p {
+    margin: .5rem;
 }
