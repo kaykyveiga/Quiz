@@ -41,7 +41,7 @@
     -webkit-text-stroke: .4px #fff;
 }
 
-@media screen and (max-width: 440px){
+@media screen and (max-width: 450px){
     .App {
         margin: 1rem;
     }
