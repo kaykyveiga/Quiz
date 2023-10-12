@@ -1,5 +1,6 @@
 import { FaExclamationCircle, FaQuestionCircle } from 'react-icons/fa';
 import { useContext } from "react";
+
 import { QuizContext } from "./context/Quiz";
 
 import Start from './components/Start/Start'

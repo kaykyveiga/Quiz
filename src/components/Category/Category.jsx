@@ -11,7 +11,7 @@ const Category = () => {
   return (
     <div id="category">
       <h2>Escolha o assunto:</h2>
-      <p>As pergunatas serão direcionadas ao assunto escolido</p>
+      <p>As perguntas serão direcionadas ao assunto escolido:</p>
       <div>
         {quizStep.questions.map((question) => (
           <button className="category-button" onClick={() => reorderQuestions(question.category)} key={question.category}>{question.category}</button>
